@@ -1,6 +1,7 @@
 function Turma() {
   this.alunas = [];
 
+
   this.adicionarAluna = function (aluna) {
     this.alunas.push(aluna);
   };
@@ -10,6 +11,7 @@ function Turma() {
       console.log(`nome: ${aluna.nome} | matrícula: ${aluna.matricula}`);
     });
   };
+
 }
 
 module.exports = { Turma };

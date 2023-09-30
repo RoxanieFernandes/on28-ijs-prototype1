@@ -2,25 +2,25 @@ function Aluna(nome, matricula) {
   this.nome = nome;
   this.matricula = matricula;
   this.notas = [];
+
+  this.adicionarNota = (nota) => {
+    this.notas.push(nota);
+  }
+
+  this.calcularMedia = function() {
+    if(this.notas.length === 0) {
+      return 0;
+    }
+
+    const total = this.notas.reduce((soma, nota) => soma + nota, 0);
+    const media = (total / this.notas.length).toFixed(2);
+    return media;
+  }
+
+  this.exibirInformacoes = function() {
+    console.log(`Nome: ${this.nome} - Matrícula: ${this.matricula} - Média: ${this.calcularMedia()}`);
+  }
 }
 
-Aluna.prototype.adicionarNota = function (nota) {
-	this.nota.push(nota)
-};
+module.exports = { Aluna }
 
-
-// array.reduce(callback( acumulador, valorAtual[, index[, array]] )[, valorInicial])
-
-// calcularMedia(): Este método calcula e retorna a média das notas da aluna.
-
-Aluna.prototype.calcularMedia = function () {
-
-}
-
-
-// exibirInformacoes(): Este método exibe no console o nome, número de matrícula e média da aluna.
-Aluna.prototype.exibirInformacoes = function () {
-  
-}
-
-module.exports = { Aluna };
